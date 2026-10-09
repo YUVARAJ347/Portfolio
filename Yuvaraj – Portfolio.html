@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Yuvaraj | Data Science & Generative AI Developer</title>
+    <meta name="description"
+        content="Portfolio of Yuvaraj, a Data Science and Generative AI Developer skilled in Python, Machine Learning, Deep Learning, NLP and Computer Vision.">
+    <meta name="keywords"
+        content="Yuvaraj, Data Science, Generative AI, Python, Machine Learning, OpenCV, Portfolio">
+    <meta property="og:title" content="Yuvaraj | Data Science & Generative AI Developer">
+    <meta property="og:description" content="Python, ML, Deep Learning, NLP, Computer Vision and GenAI projects.">
+    <style>
+        :root {
+            --bg: #fffaf3;
+            --card: #ffffff;
+            --text: #1d1b3a;
+            --muted: #5d5a7a;
+            --a: #ff5e3a;
+            --b: #7c3aed;
+            --c: #06b6d4;
+            --line: #ece4f5;
+            --grad: linear-gradient(120deg, #ff5e3a, #ff2d95 45%, #7c3aed);
+            --sh: 0 10px 30px rgba(124, 58, 237, .12);
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px)
+        }
+
+        @media (prefers-color-scheme:dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #0f0d1f;
+                --card: #1a1733;
+                --text: #f4f1ff;
+                --muted: #b3aed6;
+                --line: #2c2850;
+                --sh: 0 10px 30px rgba(0, 0, 0, .4)
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #0f0d1f;
+            --card: #1a1733;
+            --text: #f4f1ff;
+            --muted: #b3aed6;
+            --line: #2c2850;
+            --sh: 0 10px 30px rgba(0, 0, 0, .4)
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px))
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.65
+        }
+
+        a {
+            color: inherit
+        }
+
+        .wrap {
+            max-width: 1080px;
+            margin: auto;
+            padding: 0 20px
+        }
+
+        section {
+            padding: 80px 0
+        }
+
+        h2 {
+            font-size: clamp(1.7rem, 4vw, 2.3rem);
+            margin: 0 0 8px
+        }
+
+        h2 span,
+        .grad {
+            background: var(--grad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+
+        .sub {
+            color: var(--muted);
+            margin: 0 0 36px
+        }
+
+        nav {
+            position: sticky;
+            top: env(safe-area-inset-top, 0px);
+            z-index: 50;
+            background: color-mix(in srgb, var(--bg) 85%, transparent);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line)
+        }
+
+        nav .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            gap: 12px
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            text-decoration: none
+        }
+
+        .links {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            overflow-x: auto
+        }
+
+        .links a {
+            text-decoration: none;
+            font-size: .92rem;
+            color: var(--muted);
+            white-space: nowrap;
+            font-weight: 500
+        }
+
+        .links a:hover {
+            color: var(--a)
+        }
+
+        .icon {
+            border: 1px solid var(--line);
+            background: var(--card);
+            color: var(--text);
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            cursor: pointer;
+            font-size: 1rem;
+            flex: none
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 26px;
+            border-radius: 999px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid transparent;
+            transition: transform .2s, box-shadow .2s;
+            cursor: pointer
+        }
+
+        .btn:hover {
+            transform: translateY(-3px)
+        }
+
+        .p {
+            background: var(--grad);
+            color: #fff;
+            box-shadow: 0 8px 22px rgba(255, 45, 149, .35)
+        }
+
+        .o {
+            border-color: var(--b);
+            color: var(--b)
+        }
+
+        .hero {
+            padding: 90px 0 70px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero:before,
+        .hero:after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: .35;
+            z-index: -1;
+            animation: fl 9s ease-in-out infinite
+        }
+
+        .hero:before {
+            width: 320px;
+            height: 320px;
+            background: #ff5e3a;
+            top: -60px;
+            right: -60px
+        }
+
+        .hero:after {
+            width: 280px;
+            height: 280px;
+            background: #06b6d4;
+            bottom: -60px;
+            left: -60px;
+            animation-delay: -4s
+        }
+
+        @keyframes fl {
+            50% {
+                transform: translateY(30px)
+            }
+        }
+
+        .hi {
+            color: var(--a);
+            font-weight: 600
+        }
+
+        h1 {
+            font-size: clamp(2.6rem, 8vw, 4.6rem);
+            margin: 6px 0;
+            line-height: 1.05;
+            letter-spacing: -1px
+        }
+
+        .role {
+            font-size: clamp(1.1rem, 3vw, 1.6rem);
+            font-weight: 600;
+            min-height: 2em
+        }
+
+        .cur {
+            border-right: 3px solid var(--a);
+            animation: bl .8s steps(1) infinite
+        }
+
+        @keyframes bl {
+            50% {
+                border-color: transparent
+            }
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: var(--muted)
+        }
+
+        .cta {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 26px
+        }
+
+        .soc {
+            display: flex;
+            gap: 10px;
+            margin-top: 26px;
+            flex-wrap: wrap
+        }
+
+        .soc a {
+            padding: 7px 15px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: .88rem;
+            background: var(--card)
+        }
+
+        .soc a:hover {
+            border-color: var(--a);
+            color: var(--a)
+        }
+
+        .grid {
+            display: grid;
+            gap: 22px;
+            grid-template-columns: repeat(auto-fit,minmax(260px, 1fr))
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 26px;
+            box-shadow: var(--sh);
+            transition: transform .25s, border-color .25s
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--b)
+        }
+
+        .card h3 {
+            margin: 0 0 10px
+        }
+
+        .card ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+            color: var(--muted)
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px
+        }
+
+        .tag {
+            font-size: .78rem;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--b) 14%, transparent);
+            color: var(--b);
+            font-weight: 600
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 14px;
+            margin-top: 22px
+        }
+
+        .stat {
+            text-align: center;
+            padding: 16px;
+            border-radius: 16px;
+            background: var(--card);
+            border: 1px solid var(--line)
+        }
+
+        .stat b {
+            display: block;
+            font-size: 1.6rem
+        }
+
+        .bar {
+            margin: 12px 0
+        }
+
+        .bar div:first-child {
+            display: flex;
+            justify-content: space-between;
+            font-size: .9rem;
+            font-weight: 600;
+            margin-bottom: 5px
+        }
+
+        .track {
+            height: 9px;
+            background: var(--line);
+            border-radius: 9px;
+            overflow: hidden
+        }
+
+        .fill {
+            height: 100%;
+            width: 0;
+            background: var(--grad);
+            border-radius: 9px;
+            transition: width 1.2s cubic-bezier(.2, .8, .2, 1)
+        }
+
+        .pc {
+            border-top: 5px solid var(--a)
+        }
+
+        .pc:nth-child(2) {
+            border-color: var(--b)
+        }
+
+        .pc:nth-child(3) {
+            border-color: var(--c)
+        }
+
+        .tl {
+            border-left: 3px solid var(--line);
+            padding-left: 22px;
+            margin-left: 6px
+        }
+
+        .tl .card {
+            margin-bottom: 18px;
+            position: relative
+        }
+
+        .tl .card:before {
+            content: "";
+            position: absolute;
+            left: -34px;
+            top: 30px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--grad);
+            border: 3px solid var(--bg)
+        }
+
+        .date {
+            color: var(--a);
+            font-weight: 600;
+            font-size: .88rem
+        }
+
+        .ct a.row {
+            display: block;
+            text-decoration: none;
+            padding: 6px 0
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--muted);
+            border-top: 1px solid var(--line);
+            font-size: .9rem
+        }
+
+        #top {
+            position: fixed;
+            right: 18px;
+            bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+            opacity: 0;
+            pointer-events: none;
+            transition: .3s;
+            background: var(--grad);
+            color: #fff;
+            border: 0
+        }
+
+        #top.on {
+            opacity: 1;
+            pointer-events: auto
+        }
+
+        .rv {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity .7s, transform .7s
+        }
+
+        .rv.in {
+            opacity: 1;
+            transform: none
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--c);
+            outline-offset: 3px
+        }
+
+        .skip {
+            position: absolute;
+            left: -999px
+        }
+
+        .skip:focus {
+            left: 10px;
+            top: 10px;
+            background: #fff;
+            color: #000;
+            padding: 8px;
+            z-index: 99
+        }
+
+        @media(max-width:640px) {
+            .links a:not(.keep) {
+                display: none
+            }
+
+            section {
+                padding: 56px 0
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                animation: none !important;
+                transition: none !important
+            }
+
+            .rv {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        @media print {
+
+            nav,
+            #top,
+            .cta,
+            .soc {
+                display: none
+            }
+
+            .rv {
+                opacity: 1;
+                transform: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+    <nav aria-label="Main">
+        <div class="wrap">
+            <a class="logo grad" href="#home">YUVARAJ</a>
+            <div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects"
+                    class="keep">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a
+                    href="#certs">Certifications</a><a href="#contact" class="keep">Contact</a></div>
+            <button class="icon" id="theme" aria-label="Toggle dark and light mode">🌓</button>
+        </div>
+    </nav>
+
+    <main id="main">
+        <header class="hero" id="home">
+            <div class="wrap">
+                <div class="hi">👋 Hello, I'm</div>
+                <h1 class="grad">YUVARAJ</h1>
+                <div class="role"><span id="typed" class="cur">Data Science & GenAI Developer</span></div>
+                <p>I turn raw data into insight and ideas into intelligent systems, building with Python, Machine
+                    Learning, Computer Vision and Generative AI.</p>
+                <div class="cta"><a class="btn p" href="#projects">View My Projects</a><a class="btn o"
+                        href="YUVARAJ_DS_RESUME.pdf" download>Download Resume</a></div>
+                <div class="soc"><a href="https://github.com/YUVARAJ347" target="_blank" rel="noopener">GitHub</a><a
+                        href="https://www.linkedin.com/in/yuvaraj2005/" target="_blank" rel="noopener">LinkedIn</a><a
+                        href="mailto:yuvaraj1347@gmail.com">Email</a></div>
+            </div>
+        </header>
+
+        <section id="about">
+            <div class="wrap rv">
+                <h2>About <span>Me</span></h2>
+                <p class="sub">Information Technology graduate with a data-first mindset.</p>
+                <div class="card">
+                    <p>I hold a B.TECH. in Information Technology with a strong foundation in Python, Object-Oriented
+                        Programming, Data Science, Machine Learning, Deep Learning, NLP, Computer Vision and Generative
+                        AI. I am proficient with NumPy, Pandas, Matplotlib, Scikit-learn, TensorFlow, Keras and OpenCV,
+                        and use SQL for data analysis. I enjoy data preprocessing, exploratory analysis and building
+                        practical ML models that solve real problems.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat"><b class="grad">3</b>Projects</div>
+                    <div class="stat"><b class="grad">4</b>Certifications</div>
+                    <div class="stat"><b class="grad">2</b>Internship</div>
+                    <div class="stat"><b class="grad">2026</b>Graduate</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="wrap rv">
+                <h2>Technical <span>Skills</span></h2>
+                <p class="sub">Tools and technologies I work with.</p>
+                <div class="grid">
+                    <div class="card">
+                        <h3>🧠 Core Skills</h3>
+                        <div class="bar">
+                            <div><span>Python (OOP)</span><span>90%</span></div>
+                            <div class="track">
+                                <div class="fill" data-w="90"></div>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div><span>Machine Learning</span><span>82%</span></div>
+                            <div class="track">
+                                <div class="fill" data-w="82"></div>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div><span>Deep Learning</span><span>78%</span></div>
+                            <div class="track">
+                                <div class="fill" data-w="78"></div>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div><span>NLP</span><span>72%</span></div>
+                            <div class="track">
+                                <div class="fill" data-w="72"></div>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div><span>OpenCV / Computer Vision</span><span>80%</span></div>
+                            <div class="track">
+                                <div class="fill" data-w="80"></div>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div><span>Generative AI</span><span>78%</span></div>
+                            <div class="track">
+                                <div class="fill" data-w="78"></div>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div><span>SQL</span><span>70%</span></div>
+                            <div class="track">
+                                <div class="fill" data-w="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>📚 Libraries & Frameworks</h3>
+                        <div class="tags"><span class="tag">NumPy</span><span class="tag">Pandas</span><span
+                                class="tag">Matplotlib</span><span class="tag">Scikit-learn</span><span
+                                class="tag">TensorFlow</span><span class="tag">Keras</span></div>
+                        <h3 style="margin-top:24px">🛠 Tools & Platforms</h3>
+                        <div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span
+                                class="tag">VS Code</span><span class="tag">Jupyter Notebook</span><span
+                                class="tag">Google Colab</span></div>
+                        <h3 style="margin-top:24px">🗄 Languages & Databases</h3>
+                        <div class="tags"><span class="tag">Python (OOP)</span><span class="tag">SQL</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="wrap rv">
+                <h2>Featured <span>Projects</span></h2>
+                <p class="sub">Real-world builds across vision, security and analytics.</p>
+                <div class="grid">
+                    <article class="card pc">
+                        <h3>🤖 Customer Churn Prediction with Machine Learning</h3>
+                        <p>Machine learning model to predict customer churn and support proactive retention strategies.
+                        </p>
+                        <ul>
+                            <li>Analyzes customer data to identify users who are likely to leave a subscription service.
+                            </li>
+                            <li>Trained and evaluated machine learning models to accurately predict customer churn.</li>
+                        </ul>
+                        <div class="tags"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span
+                                class="tag">Random Forest</span><span class="tag">Pandas</span><span
+                                class="tag">Matplotlib</span></div>
+                    </article>
+                    <article class="card pc">
+                        <h3>🗳 Blockchain Biometric E-Voting</h3>
+                        <p>Secure and transparent digital elections.</p>
+                        <ul>
+                            <li>Biometric authentication verifies voters and prevents unauthorized or duplicate voting.
+                            </li>
+                            <li>Complete workflow: registration, identity verification, vote casting and transaction
+                                recording.</li>
+                        </ul>
+                        <div class="tags"><span class="tag">Blockchain</span><span class="tag">Biometrics</span><span
+                                class="tag">Security</span></div>
+                    </article>
+                    <article class="card pc">
+                        <h3>📚 Book Rating Analyser</h3>
+                        <p>Data analysis of reader behaviour and book trends.</p>
+                        <ul>
+                            <li>Identifies top-rated books, reader preferences, user trends and genre-wise patterns.
+                            </li>
+                            <li>Cleaned, preprocessed and aggregated data into actionable insights.</li>
+                        </ul>
+                        <div class="tags"><span class="tag">Pandas</span><span class="tag">NumPy</span><span
+                                class="tag">Matplotlib</span><span class="tag">EDA</span></div>
+                    </article>
+                </div>
+                <p style="margin-top:22px"><a class="btn o" href="https://github.com/YUVARAJ347" target="_blank"
+                        rel="noopener">See more on GitHub →</a></p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="wrap rv">
+                <h2><span>Experience</span></h2>
+                <p class="sub">Hands-on industry exposure.</p>
+                <div class="tl">
+                    <div class="card">
+                        <div class="date">Sep 2025 – Oct 2025</div>
+                        <h3>Data Science Intern · The Mind IT, Trichy</h3>
+                        <ul>
+                            <li>Completed a 30-day internship covering data preprocessing, EDA and data visualization.
+                            </li>
+                            <li>Performed data cleaning, missing-value handling and aggregation to uncover patterns and
+                                trends.</li>
+                            <li>Developed the Book Rating Analyser to surface top-rated books, user trends and genre
+                                patterns.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="tl">
+            <div class="card">
+                <div class="date">Aug 2025 – Sep 2025</div>
+                <h3>Java Full Stack Development Intern · Internpro, Virutal Internship</h3>
+                <ul>
+                    <li>Completed a 30-day internship Gained hands-on experience in IT technical tasks.</li>
+                    <li>Demonstrated problem-solving skills, professionalism, and active participation in technical
+                        development tasks.</li>
+                    <li>Adapted to new challenges while maintaining dedication, discipline, and a strong willingness to
+                        learn.</li>
+                </ul>
+            </div>
+           </div>
+            </div>
+           
+        </section>
+
+        <section id="education">
+            <div class="wrap rv">
+                <h2><span>Education</span></h2>
+                <p class="sub">Academic background.</p>
+                <div class="card">
+                    <div class="date">2022 – 2026</div>
+                    <h3>B.TECH. Information Technology</h3>
+                    <p>Mookambigai College of Engineering, Pudukkottai, Tamil Nadu · CGPA 7.2</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="certs">
+            <div class="wrap rv">
+                <h2><span>Certifications</span></h2>
+                <p class="sub">Continuous learning.</p>
+                <div class="grid">
+                    <div class="card">
+                        <div class="date">September 2025</div>
+                        <h3>🤖 GenAI Powered Data Analytics Job Simulation</h3>
+                        <p>Forage-TATA</p>
+                    </div>
+                    <div class="card">
+                        <div class="date">August 2025</div>
+                        <h3>🤖 Generative AI in Action</h3>
+                        <p>IBM SkillsBuild Certificate</p>
+                    </div>
+                    <div class="card">
+                        <div class="date">July 2025</div>
+                        <h3>🎓 Data Science Course</h3>
+                        <p>Cognitive Class-IBM</p>
+                    </div>
+                    <div class="card">
+                        <div class="date">June 2025</div>
+                        <h3>🏅 Data Analysis with Python</h3>
+                        <p>Infosys-Springborad</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="wrap rv ct">
+                <h2>Let's <span>Connect</span></h2>
+                <p class="sub">Open to data science, ML and GenAI opportunities.</p>
+                <div class="card"><a class="row" href="mailto:yuvaraj1347@gmail.com">📧 yuvaraj1347@gmail.com</a><a
+                        class="row" href="tel:+917339636852">📱 +91 73396 36852</a><a class="row"
+                        href="https://www.linkedin.com/in/yuvaraj2005/" target="_blank" rel="noopener">💼 LinkedIn:
+                        YUVARAJ S</a><a class="row" href="https://github.com/YUVARAJ347" target="_blank"
+                        rel="noopener">💻 GitHub: YUVARAJ347</a>
+                    <div class="cta"><a class="btn p" href="mailto:yuvaraj1347@gmail.com?subject=Hello%20Yuvaraj">Send
+                            an Email</a></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>© <span id="yr"></span> Yuvaraj · Data Science & Generative AI Developer</footer>
+    <button class="icon" id="top" aria-label="Scroll to top">↑</button>
+
+    <script>
+        (function () {
+            var r = document.documentElement, t = document.getElementById('theme');
+            try {var s = localStorage.getItem('theme'); if (s) r.setAttribute('data-theme', s)} catch (e) { }
+            t.onclick = function () {var d = r.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); var n = d === 'dark' ? 'light' : 'dark'; r.setAttribute('data-theme', n); try {localStorage.setItem('theme', n)} catch (e) { } };
+            document.getElementById('yr').textContent = new Date().getFullYear();
+            var tp = document.getElementById('top');
+            addEventListener('scroll', function () {tp.classList.toggle('on', scrollY > 500)}, {passive: true});
+            tp.onclick = function () {scrollTo({top: 0, behavior: 'smooth'})};
+            var io = new IntersectionObserver(function (es) {es.forEach(function (e) {if (e.isIntersecting) {e.target.classList.add('in'); e.target.querySelectorAll('.fill').forEach(function (f) {f.style.width = f.dataset.w + '%'}); io.unobserve(e.target)} })}, {threshold: .15});
+            document.querySelectorAll('.rv').forEach(function (e) {io.observe(e)});
+            var w = ['Data Science Developer', 'Generative AI Developer', 'Computer Vision Enthusiast', 'Python Programmer'], i = 0, j = 0, del = false, el = document.getElementById('typed');
+            if (!matchMedia('(prefers-reduced-motion:reduce)').matches) {(function tick() {var x = w[i]; el.textContent = x.slice(0, j); if (!del && j < x.length) j++; else if (!del) {del = true; return setTimeout(tick, 1400)} else if (j > 0) j--; else {del = false; i = (i + 1) % w.length} setTimeout(tick, del ? 40 : 80)})()}
+        })();
+    </script>
+</body>
+
+</html>
